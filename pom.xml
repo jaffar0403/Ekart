@@ -120,6 +120,19 @@
 
     <build>
         <plugins>
+                 <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.2.0</version>
+      <configuration>
+  <httpConfiguration>
+    <all>
+      <connectionTimeout>60000</connectionTimeout>
+      <readTimeout>60000</readTimeout>
+    </all>
+  </httpConfiguration>
+</configuration>
+    </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -160,13 +173,6 @@
       <url>http://3.108.254.192:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
 </distributionManagement>
-<configuration>
-  <httpConfiguration>
-    <all>
-      <connectionTimeout>60000</connectionTimeout>
-      <readTimeout>60000</readTimeout>
-    </all>
-  </httpConfiguration>
-</configuration>
+
 
 </project>
